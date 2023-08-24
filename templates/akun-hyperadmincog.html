@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Forms / Elements - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../static/assets/img/favicon.png" rel="icon">
+    <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../static/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="../static/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="../static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="../static/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../static/assets/css/style.css" rel="stylesheet">
+    <link href="../static/asset/css/addmenu.css" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        function gantipass() {
+            let passwordlama = $('#passwordlama').val();
+            let password = $('#password').val();
+            let cpassword = $('#cpassword').val();
+            if (!passwordlama) {
+                alert('mohon mengisi form password lama')
+            } else if (!password) {
+                alert('mohon mengisi password baru')
+            } else if (!cpassword) {
+                alert('mohon mengisi ulang password baru di confirm password')
+            } else if (password !== cpassword) {
+                alert('password baru dan confirm password tidak sama mohon mengisi ulang confirm password')
+            } else {
+                let form_data = new FormData();
+                form_data.append('passwordlama_give', passwordlama);
+                form_data.append('password_give', password);
+                $.ajax({
+                    type: 'POST',
+                    url: '/♒︎⍓︎◻︎♏︎❒︎♋︎♎︎❍︎♓︎■︎♍︎□︎■︎',
+                    data: form_data,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        url = response['url']
+                        if (url){
+                            alert(response['msg'])
+                            window.location.reload();
+                        }else{
+                            alert(response['msg'])
+                        }
+                    }
+                })
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="/" class="logo d-flex align-items-center">
+              <img src="../static/assets/img/Logo-FA-Primary-Color-01.png" alt="">
+              <span class="d-none d-lg-block">Why Not Coffee</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+          </div><!-- End Logo -->
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+    
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="/admin-control-room/dd4c43005bbfb6346300d99999e2bcde">
+              <i class="bi bi-grid"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+    
+          <li class="nav-item">
+            <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-journal-text"></i><span>Menu</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+              <li>
+                <a href="/admin-menu-addmenu-dd4c43005bbfb6346300d99999e2bcde" class="active">
+                  <i class="bi bi-circle"></i><span>Add Menu</span>
+                </a>
+              </li>
+              <li>
+                <a href="/admin-menu-deletemenu-dd4c43005bbfb6346300d99999e2bcde">
+                  <i class="bi bi-circle"></i><span>Delete Menu</span>
+                </a>
+              </li>
+              <li>
+                <a href="/admin-menu-editmenu-dd4c43005bbfb6346300d99999e2bcde">
+                  <i class="bi bi-circle"></i><span>Edit Menu</span>
+                </a>
+              </li>
+            </ul>
+          </li><!-- End Forms Nav -->
+          <li class="nav-item">
+            <a class="nav-link " data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-layout-text-window-reverse"></i><span>Akun</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+              <li>
+                <a href="/admin-akun-admins-dd4c43005bbfb6346300d99999e2bcde" class="active">
+                  <i class="bi bi-circle"></i><span>admins</span>
+                </a>
+              </li>
+              <li>
+                <a href="/admin-akun-hyperadmincog-dd4c43005bbfb6346300d99999e2bcde" class="active">
+                  <i class="bi bi-circle"></i><span>Hyper-Admin-config</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+    
+    
+    
+      </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Add Menu</h1>
+        </div><!-- End Page Title -->
+
+        <section class="section">
+            <div class="row">
+                <div class="menu-container">
+                    <div class="menu-card-grid">
+                        <div>
+                            <label for="passwordlama" class="col-form-label">Password lama</label>
+                            <div class="row">
+                                <div class="col-10">
+                                    <input type="password" class="form-control" id="passwordlama">
+                                </div>
+                            </div>
+                            <label for="inputPassword" class=" col-form-label">Password Baru</label>
+                            <div class="row">
+                                <div class="col-10">
+                                    <input type="password" class="form-control" id="password">
+                                </div>
+                            </div>
+                            <label for="cpassword" class="col-form-label">Confirm Password</label>
+                            <div class="row">
+                                <div class="col-10">
+                                    <input type="password" class="form-control" id="cpassword">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary" onclick="gantipass()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="../static/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="../static/assets/vendor/echarts/echarts.min.js"></script>
+    <script src="../static/assets/vendor/quill/quill.min.js"></script>
+    <script src="../static/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="../static/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="../static/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="../static/assets/js/main.js"></script>
+
+</body>
+
+</html>

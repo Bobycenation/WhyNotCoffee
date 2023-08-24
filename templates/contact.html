@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Framework Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+    integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+    integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+    crossorigin="anonymous"></script>
+
+  <title>
+    Contact - Whynot Coffee & Roastery - We provide place, perfect, educated
+    and affordable coffee
+  </title>
+
+  <link rel="icon" href="../static/asset/Logo-FA-Primary-Color-01.png" />
+
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #ffffff;
+      overflow-x: hidden;
+    }
+
+    /* First Navbar */
+    header {
+
+      width: 100%;
+      position: fixed;
+      z-index: 100000;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      top: 0;
+      left: 0;
+      transition: 0.3s;
+      padding: 30px 100px;
+    }
+
+    .navbar-brand>a>img {
+      width: 80px;
+      height: 80px;
+      transition: 0.3s;
+    }
+
+    .navbar-link {
+      margin-top: -20px;
+      position: relative;
+      margin-right: -65px;
+    }
+
+    .navbar-link>ul {
+      position: relative;
+      display: flex;
+
+    }
+
+    .navbar-link>ul>li {
+      list-style: none;
+    }
+
+    .navbar-link>ul>li>a {
+      position: relative;
+      margin: 0px 48px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      font-size: 19px;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .navbar-link>ul>li>a:hover {
+      color: white;
+    }
+
+    .navbar-link>ul>li>a::after {
+      content: "";
+      position: absolute;
+      background-color: white;
+      width: 0px;
+      height: 3px;
+      left: 0px;
+      bottom: -1px;
+      transition: 0.3s;
+      border-radius: 50px;
+    }
+
+    .navbar-link ul li:nth-child(4) a::after {
+      background-color: white;
+      width: 100%;
+    }
+
+    .navbar-link>ul>li>a:hover::after {
+      width: 100%;
+    }
+
+    header>img {
+      position: absolute;
+      width: 59%;
+      right: 0px;
+      top: 0px;
+      z-index: -1;
+      transition: 0.3s;
+      opacity: 100%;
+    }
+
+    /* First Humburger Menu */
+    .menu-toggle {
+      margin-right: -50px;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 18px;
+      position: relative;
+    }
+
+    .menu-toggle span {
+      width: 28px;
+      height: 3px;
+      display: block;
+      background-color: white;
+      border-radius: 3px;
+    }
+
+    .menu-toggle input {
+      position: absolute;
+      width: 40px;
+      height: 28px;
+      left: -6px;
+      top: -5px;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* Humburger Menu Animasi */
+    .menu-toggle span:nth-child(2) {
+      transform-origin: 0 0;
+      transition: 0.6s;
+    }
+
+    .menu-toggle input:checked~span:nth-child(2) {
+      transform: rotate(45deg) translate(-2px, -1px);
+      background-color: white;
+    }
+
+    .menu-toggle span:last-child {
+      transform-origin: 0 100%;
+      transition: 1s;
+    }
+
+    .menu-toggle input:checked~span:last-child {
+      transform: rotate(-45deg) translate(-1.8px, 0);
+      background-color: white;
+    }
+
+    .menu-toggle span:nth-child(3) {
+      transition: 0.6s;
+    }
+
+    .menu-toggle input:checked~span:nth-child(3) {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    /* Last Humberger Menu */
+
+    /* First Fitur javascript Navbar */
+    header.sticky-header {
+      padding: 8px 100px;
+      height: 100px;
+      background-color: #fff;
+      filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 8px 10px rgba(0, 0, 0, 0.04));
+      border-radius: 0px 0px 30px 30px;
+    }
+
+    header.sticky-header .navbar-brand a img {
+      width: 50px;
+      height: 50px;
+    }
+
+    header.sticky-header .navbar-link ul {
+      margin-top: 25px;
+    }
+
+    header.sticky-header .navbar-link ul li a {
+      color: black;
+    }
+
+    header.sticky-header ul li a:hover {
+      color: black;
+    }
+
+    header.sticky-header .navbar-link ul li a::after {
+      content: "";
+      position: absolute;
+      background-color: #d19c4c;
+      width: 0px;
+      height: 3px;
+      left: 0px;
+      bottom: -1px;
+      transition: 0.1s;
+      border-radius: 50px;
+    }
+
+    header.sticky-header .navbar-link ul li:nth-child(4) a::after {
+      width: 100%;
+      background-color: #d19c4c;
+    }
+
+    header.sticky-header .navbar-link ul li a:hover::after {
+      width: 100%;
+    }
+
+    header.sticky-header>img {
+      opacity: 0%;
+    }
+
+    /* Last Fitur Javascript Navbar */
+    /* Last Navbar */
+
+    /* First Container 2 */
+    .container2 {
+      /* background-color: red; */
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box-container2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 150px;
+      margin-top: 180px;
+    }
+
+    .box-container2>img {
+      width: 606px;
+      height: 430px;
+      object-fit: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.04));
+      border-radius: 0px 100px 100px 100px;
+    }
+
+    .text-description {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .item-text {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: start;
+      gap: 20px;
+    }
+
+    .item-text>img {
+      width: 29px;
+      height: 29px;
+    }
+
+    /* Last Container 2 */
+
+    /* First Container 3 */
+    .container3 {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding-top: 120px;
+      gap: 130px;
+    }
+
+    .mapping {
+      width: 777px;
+      height: 446px;
+      overflow: hidden;
+      filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.04));
+    }
+
+    .text-container3 {
+      width: max-content;
+      height: max-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .text-container3>h1 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 50px;
+      color: #c46200;
+    }
+
+    .text-container3>img {
+      width: 116.84px;
+      height: 186.6px;
+      transform: rotate(20deg);
+    }
+
+    /* Last Container 3 */
+
+    /* First Footer */
+    footer {
+      width: 100%;
+      height: 425px;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .isi-footer1 {
+      width: 100%;
+      height: 375px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 500px;
+    }
+
+    .img-footer {
+      width: 267.28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .img-footer>img {
+      width: 180px;
+    }
+
+    .icon-sosmed {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .text-footer {
+      width: 454.28px;
+      gap: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      margin-top: 50px;
+    }
+
+    .head-text-footer>h6 {
+      line-height: 30px;
+      font-size: 24px;
+      color: white;
+    }
+
+    .head-text-footer>h6>span {
+      color: #ec9e06;
+    }
+
+    .body-text-footer>p {
+      font-size: 15px;
+      color: white;
+    }
+
+    .isi-footer2 {
+      width: 100%;
+      background-color: #1d1d1b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .isi-footer2>p {
+      margin-top: 10px;
+    }
+
+    /* Last Footer */
+
+
+
+    /* First Media Screen Layar Besar */
+    @media (max-width: 1366px) {
+      /* First Navbar */
+
+      .navbar-brand>a>img {
+        width: 80px;
+        height: 80px;
+        transition: 0.3s;
+      }
+
+      .navbar-link {
+        margin-top: -25px;
+        position: relative;
+        margin-right: -95px;
+      }
+
+      .navbar-link>ul>li {
+        list-style: none;
+      }
+
+      .navbar-link>ul>li>a {
+        margin: 0px 48px;
+      }
+
+      /* Last Navbar */
+    }
+
+    /* First Media Screen Layar Normal */
+    @media (max-width: 1024px) {
+
+      body {
+        overflow-x: hidden;
+      }
+
+      /* First Navbar */
+
+      .navbar-link {
+        position: relative;
+        margin-right: -120px;
+        width: 87%;
+      }
+
+
+
+      header>img {
+        position: absolute;
+        width: 70%;
+        right: 0px;
+        top: 0px;
+        z-index: -1;
+        transition: 0.3s;
+        opacity: 100%;
+      }
+
+
+      /* Last Navbar */
+
+      /* First Container 2 */
+      .container2 {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box-container2 {
+        flex-direction: row;
+        gap: 20px;
+        margin-top: 180px;
+      }
+
+      .box-container2>img {
+        width: 506px;
+        height: 330px;
+        border-radius: 0px 80px 80px 80px;
+      }
+
+      /* First Container 3 */
+      .container3 {
+        height: 85vh;
+        gap: 95px;
+      }
+
+      .mapping {
+        width: 555px;
+        height: 346px;
+      }
+
+      .text-container3>h1 {
+        font-size: 40px;
+      }
+
+      /* Last Container 3 */
+
+
+      /* First Footer */
+      .isi-footer1 {
+        gap: 320px;
+      }
+
+      .img-footer>img {
+        width: 120px;
+      }
+
+      .text-footer {
+        width: 390px;
+      }
+
+      .head-text-footer h6 {
+        font-size: 22px;
+      }
+
+      .body-text-footer p {
+        font-size: 13px;
+      }
+
+      .isi-footer2 {
+        height: 32px;
+      }
+
+      .isi-footer2 p {
+        font-size: 13px;
+      }
+
+      /* Last Footer */
+
+    }
+
+    /* First Media Screen Tablet*/
+    @media (max-width: 991px) {
+
+      /* First Navbar */
+      .navbar-brand>a>img {
+        width: 60px;
+        height: 60px;
+        margin-left: -50px;
+        margin-top: -40px;
+        transition: 0.3s;
+      }
+
+
+      .navbar-link {
+        position: relative;
+        /* height: 50px; */
+        padding-top: 12px;
+        margin-right: -65px;
+        width: 85%;
+      }
+
+
+
+      header>img {
+        object-fit: contain;
+        position: absolute;
+        width: 70%;
+        right: -1px;
+        top: -29px;
+        height: 160px;
+        z-index: -1;
+        transition: 0.3s;
+        opacity: 100%;
+      }
+
+      header.sticky-header .navbar-brand a img {
+        width: 50px;
+        height: 50px;
+        margin-top: 0px;
+      }
+
+      header.sticky-header .navbar-link ul {
+        margin-top: 35px;
+      }
+
+
+      /* Last Navbar */
+
+      /* First Container 2 */
+      .container2 {
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box-container2 {
+        flex-direction: column;
+        gap: 60px;
+        margin-top: 150px;
+        height: 800px;
+        width: 700px;
+      }
+
+      .text-description {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        margin-left: -130px;
+        gap: 20px;
+      }
+
+      .item-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        gap: 20px;
+      }
+
+      .item-text>img {
+        width: 29px;
+        height: 29px;
+      }
+
+
+      .box-container2>img {
+        width: 500px;
+        object-fit: cover;
+        height: 300px;
+        border-radius: 0px 40px 40px 40px;
+      }
+
+      /* First Container 3 */
+      .container3 {
+        width: 100%;
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        padding-top: 200px;
+        gap: 0px;
+      }
+
+      .mapping {
+        position: absolute;
+        padding-top: 40px;
+        z-index: 1;
+        width: 655px;
+        height: 546px;
+        overflow: hidden;
+        filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.04));
+      }
+
+      .text-container3 {
+        width: max-content;
+        height: max-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 60px;
+        position: absolute;
+        z-index: 2;
+        margin-top: -175px;
+        margin-left: -190px;
+      }
+
+      .text-container3>h1 {
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 50px;
+        color: #c46200;
+      }
+
+      .text-container3>img {
+        width: 86.84px;
+        height: 156.6px;
+        transform: rotate(-50deg);
+
+      }
+
+      /* Last Container 3 */
+
+      /* First Footer */
+      .isi-footer1 {
+        gap: 225px;
+      }
+
+      .img-footer>img {
+        width: 140px;
+      }
+
+      .text-footer {
+        width: 320px;
+      }
+
+      .head-text-footer h6 {
+        font-size: 20px;
+      }
+
+      .body-text-footer p {
+        font-size: 12px;
+      }
+
+      .isi-footer2 p {
+        font-size: 12px;
+      }
+
+      /* Last Footer */
+
+
+    }
+
+    /* First Media Screen Hp Besar(Tablet Mini) */
+    @media (max-width: 768px) {
+
+      /* First Navbar */
+      .navbar-brand>a>img {
+        width: 70px;
+        height: 70px;
+        transition: 0.3s;
+        margin-top: -15px;
+      }
+
+      .navbar-link {
+        margin-right: -130px;
+        width: 100%;
+        gap: 100px;
+        margin-top: -40px;
+      }
+
+      .navbar-link>ul>li>a {
+        position: relative;
+        margin: 0px 33px;
+        font-size: 15px;
+
+      }
+
+
+      header>img {
+        object-fit: contain;
+        position: absolute;
+        width: 70%;
+        right: -1px;
+        top: -32px;
+        height: 160px;
+        z-index: -1;
+        transition: 0.3s;
+        opacity: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        object-fit: fill;
+
+
+      }
+
+      /* Last Navbar */
+
+
+      /* container 2 */
+
+      .box-container2 {
+
+        margin-top: 235px;
+      }
+
+
+      /* container 3 */
+
+      .container3 {
+        height: 80vh;
+        padding-top: 330px;
+      }
+
+      /* First Footer */
+      footer {
+        margin-top: 200px;
+      }
+
+      .isi-footer1 {
+        gap: 200px;
+      }
+
+      .img-footer>img {
+        width: 120px;
+      }
+
+      .head-text-footer h6 {
+        font-size: 18px;
+      }
+
+      .body-text-footer p {
+        font-size: 10px;
+      }
+
+      .isi-footer2 p {
+        font-size: 10px;
+      }
+
+      /* Last Footer */
+    }
+
+    /* First Media Screen Hp Normal */
+    @media (max-width: 575px) {
+      /* First Navbar */
+
+      header {
+        background-color: #1d1d1b;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .navbar-link ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        flex-direction: column;
+        background-color: darkgoldenrod;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 10%;
+        transition: all 1s;
+      }
+
+      header.sticky-header .navbar-link ul li a {
+        color: white;
+        opacity: 0;
+      }
+
+      .navbar-link {
+        position: relative;
+        margin-right: -1205px;
+      }
+
+      .navbar-brand>a>img {
+        margin-top: 10px;
+        margin-left: -60px;
+        transition: 0.3s;
+      }
+
+
+      .nav-logo a img {
+        width: 50px;
+        height: 50px;
+      }
+
+      nav ul li {
+        padding-left: 100px;
+        transform: translate(0, 30px);
+      }
+
+      .sticky-header {
+        height: 70px;
+      }
+
+      .sticky-header .nav-logo a img {
+        width: 45px;
+        height: 45px;
+      }
+
+      .sticky-header .menu-toggle span {
+        background-color: black;
+      }
+
+      .slide {
+        right: 300px;
+        overflow: hidden;
+      }
+
+
+      header>img {
+        position: absolute;
+        width: 0%;
+        right: 0px;
+        top: 0px;
+        z-index: -1;
+        transition: 0.3s;
+        opacity: 100%;
+      }
+
+      /* Last Navbar */
+
+
+      /* First Container 2 */
+      .container2 {
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box-container2 {
+        flex-direction: column;
+        gap: 60px;
+        margin-top: 300px;
+        height: 800px;
+        width: 700px;
+      }
+
+      .text-description {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        margin-left: -20px;
+        gap: 20px;
+        font-size: 12px;
+      }
+
+      .item-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        gap: 20px;
+      }
+
+      .item-text>img {
+        width: 20px;
+        height: 20px;
+      }
+
+
+      .box-container2>img {
+        width: 250px;
+        object-fit: fit;
+        height: 140px;
+        border-radius: 0px 30px 30px 30px;
+      }
+
+      /* First Container 3 */
+      .container3 {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        padding-top: 300px;
+        gap: 0px;
+      }
+
+      .mapping {
+        position: absolute;
+        padding-top: 0px;
+        z-index: 1;
+        width: 300px;
+        height: 250px;
+        overflow: hidden;
+        filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.04));
+      }
+
+      .mapping iframe {
+        width: 300px;
+      }
+
+      .text-container3 {
+        width: max-content;
+        height: max-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 60px;
+        position: absolute;
+        z-index: 2;
+        margin-top: -95px;
+        margin-left: -35px;
+      }
+
+      .text-container3>h1 {
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        color: #c46200;
+      }
+
+      .text-container3>img {
+        width: 48.84px;
+        height: 70.6px;
+        transform: rotate(-50deg);
+
+      }
+
+      /* Last Container 3 */
+
+
+      /* First Footer */
+      footer {
+        margin-top: 350px;
+      }
+
+      .isi-footer1 {
+        gap: 50px;
+        flex-direction: column;
+        height: 400px;
+      }
+
+      .img-footer>img {
+        width: 100px;
+      }
+
+      .text-footer {
+        width: 280px;
+      }
+
+      .head-text-footer h6 {
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+      }
+
+      .body-text-footer p {
+        font-size: 8px;
+        text-align: center;
+      }
+
+      .isi-footer2 p {
+        font-size: 8px;
+      }
+
+      /* Last Footer */
+    }
+
+    /* First Media Screen Hp Kecil */
+    @media (max-width: 360px) {
+
+
+      /* First Navbar */
+      .menu-toggle {
+        display: flex;
+      }
+
+      .navbar-link ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        flex-direction: column;
+        background-color: darkgoldenrod;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 10%;
+        transition: all 1s;
+      }
+
+      .navbar-link {
+        position: relative;
+        margin-right: -2005px;
+      }
+
+      .navbar-brand>a>img {
+
+        width: 40px;
+        height: 40px;
+        margin-left: -60px;
+        transition: 0.3s;
+      }
+
+      nav ul li {
+        padding-left: 50px;
+        transform: translate(0, 30px);
+      }
+
+      .sticky-header {
+        height: 70px;
+      }
+
+      .sticky-header .nav-logo a img {
+        width: 30px;
+        height: 30px;
+      }
+
+      .sticky-header .menu-toggle span {
+        background-color: black;
+      }
+
+      .slide {
+        right: 300px;
+        overflow: hidden;
+      }
+
+      /* Last Navbar */
+
+      /* First Container 2 */
+      .container2 {
+        margin-top: 20px;
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box-container2 {
+        flex-direction: column;
+        gap: 60px;
+        margin-top: 300px;
+        height: 800px;
+        width: 700px;
+      }
+
+      .text-description {
+        width: 255px;
+        display: flex;
+        flex-direction: column;
+        margin-left: -20px;
+        gap: 15px;
+        font-size: 11px;
+      }
+
+      .item-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        gap: 20px;
+      }
+
+      .item-text>img {
+        width: 15px;
+        height: 15px;
+      }
+
+
+      .box-container2>img {
+        width: 230px;
+        object-fit: cover;
+        height: 140px;
+        border-radius: 0px 30px 30px 30px;
+      }
+
+      /* First Container 3 */
+      .container3 {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        padding-top: 300px;
+        gap: 0px;
+      }
+
+      .mapping {
+        position: absolute;
+        object-fit: fill;
+        padding-top: 0px;
+        z-index: 1;
+        width: 250px;
+        height: 200px;
+        overflow: hidden;
+        filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.04));
+      }
+
+      .text-container3 {
+        width: max-content;
+        height: max-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 60px;
+        position: absolute;
+        z-index: 2;
+        margin-top: -95px;
+        margin-left: -35px;
+      }
+
+      .text-container3>h1 {
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 21px;
+        color: #c46200;
+      }
+
+      .text-container3>img {
+        width: 38.84px;
+        height: 60.6px;
+        transform: rotate(-50deg);
+
+      }
+
+      /* Last Container 3 */
+
+      /* First Footer */
+
+      footer {
+        margin-top: 280px;
+      }
+
+      .isi-footer1 {
+        gap: 50px;
+        flex-direction: column;
+        height: 400px;
+      }
+
+      .img-footer>img {
+        width: 100px;
+      }
+
+      .text-footer {
+        width: 280px;
+      }
+
+      .head-text-footer h6 {
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+      }
+
+      .body-text-footer p {
+        font-size: 8px;
+        text-align: center;
+      }
+
+      .isi-footer2 p {
+        font-size: 8px;
+      }
+
+      /* Last Footer */
+    }
+  </style>
+
+  <script>
+    window.addEventListener("scroll", header);
+    function header() {
+      var header = document.querySelector("header");
+      header.classList.toggle("sticky-header", window.scrollY > 0);
+    }
+
+  </script>
+</head>
+
+<body>
+  <header>
+    <!-- Div Pertama -->
+    <div class="navbar-brand">
+      <a href="index.html">
+        <img src="../static/asset/Logo-FA-Primary-Color-01.png" alt="Logo WhyNotCoffee" />
+      </a>
+    </div>
+    <!-- Div Kedua -->
+    <div class="navbar-link">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li>
+          <a href="/menu">Menu</a>
+        </li>
+        <li><a href="/about">About US</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Ini yang logo humberger -->
+    <div class="menu-toggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    </nav>
+    <!-- end menu navigation bar -->
+
+    <img src="../static/asset/navbar.svg" alt="" />
+  </header>
+
+  <div class="container2">
+    <div class="box-container2">
+      <div class="text-description">
+        <div class="item-text">
+          <img src="../static/asset/Instagram.svg" alt="" />
+          <p>whynotcoffee.id</p>
+        </div>
+        <div class="item-text">
+          <img src="../static/asset/whatsapp.svg" alt="" />
+          <p>+62 895-6293-70858</p>
+        </div>
+        <div class="item-text">
+          <img src="../static/asset/map.png" alt="" />
+          <p>
+            Jl. Sukarjo Wiryopranoto No.2, RT.2/RW.4, Kb. Klp., Kecamatan
+            Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10120
+          </p>
+        </div>
+        <div class="item-text">
+          <img src="../static/asset/clock.png" alt="" />
+          <p>10.00 AM - 21.00 PM</p>
+        </div>
+      </div>
+
+      <img src="../static/asset/lokasi.jpg" alt="" />
+    </div>
+  </div>
+
+  <div class="container3">
+    <div class="mapping">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1983.3822768139714!2d106.827336!3d-6.162279!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f50bfd8852bf%3A0x9e6a762f3ab16755!2sWhynot%20Coffee%20-%20Pasar%20Baru!5e0!3m2!1sen!2sid!4v1685715499782!5m2!1sen!2sid"
+        width="777" height="446" style="border: 0; border-radius: 10px" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="text-container3">
+      <h1>Our Location</h1>
+      <img src="../static/asset/arrow.png" alt="arrow" />
+    </div>
+  </div>
+
+  <footer>
+    <div class="isi-footer1">
+      <div class="img-footer">
+        <img src="../static/asset/Logo-FA-Primary-Color-01.png" alt="" />
+        <div class="icon-sosmed">
+          <a href="https://www.instagram.com/whynotcoffee.id/">
+            <img src="../static/asset/instagram1.svg" alt="" height="20px" />
+          </a>
+          <a href="https://wa.me/62895629370858?text=Halo%20WhyNotAdmin,%20saya%20mau%20bertanya">
+            <img src="../static/asset/whatsapp1.svg" alt="" height="20px" />
+          </a>
+        </div>
+      </div>
+
+      <div class="text-footer">
+        <div class="head-text-footer">
+          <h6><span>Specialty Coffee & Roastery</span></h6>
+          <h6>WhyNotCoffee – The Boxx In</h6>
+        </div>
+        <div class="body-text-footer">
+          <p>
+            Jl. Sukarjo Wiryopranoto No.2, RT.2/RW.4, Kb. Klp., Kecamatan
+            Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10120
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="isi-footer2">
+      <p>
+        Copyright &copy; 2023 Whynot Coffee & Roastery. All rights reserved
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>

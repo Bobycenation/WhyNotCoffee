@@ -1,0 +1,2601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font Family -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;700&display=swap"
+    rel="stylesheet" />
+
+  <title>
+    Whynot Coffee & Roastery - We provide place, perfect, educated and
+    affordable coffee.
+  </title>
+
+  <!-- Favicon Logo Website -->
+  <link rel="icon" href="../static/asset/Logo-FA-Primary-Color-01.png" />
+
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: white;
+      overflow-x: hidden;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* First Navbar */
+    nav {
+      display: flex;
+      background-color: transparent;
+      justify-content: space-around;
+      align-items: center;
+      position: fixed;
+      z-index: 100000;
+      gap: 18em;
+      width: 100%;
+      height: 150px;
+      transition: 0.3s;
+    }
+
+    .nav-logo a img {
+      width: 80px;
+      height: 80px;
+      transition: 0.3s;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      width: 40%;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      font-size: 19px;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    /* First Fitur javascript Navbar */
+    .sticky-header {
+      height: 90px;
+      background-color: #fff;
+      filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 8px 10px rgba(0, 0, 0, 0.04));
+      border-radius: 0px 0px 30px 30px;
+    }
+
+    .sticky-header .nav-logo a img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .sticky-header ul li a {
+      color: black;
+    }
+
+    .sticky-header ul li a:hover {
+      color: black;
+    }
+
+    .sticky-header ul li a::after {
+      content: "";
+      position: absolute;
+      background-color: #d19c4c;
+      width: 0px;
+      height: 3px;
+      left: 0px;
+      bottom: -1px;
+      transition: 0.3s;
+      border-radius: 50px;
+    }
+
+    .sticky-header ul li:first-child a::after {
+      background-color: #d19c4c;
+      width: 0%;
+    }
+
+    .sticky-header ul li a:hover::after {
+      width: 100%;
+    }
+
+    /* Last Fitur Stiky Navbar */
+
+    /* First Humburger Menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 18px;
+      position: relative;
+    }
+
+    .menu-toggle span {
+      width: 28px;
+      height: 3px;
+      display: block;
+      background-color: white;
+      border-radius: 3px;
+    }
+
+    .menu-toggle input {
+      position: absolute;
+      width: 40px;
+      height: 28px;
+      left: -6px;
+      top: -5px;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* Humburger Menu Animasi */
+    .menu-toggle span:nth-child(2) {
+      transform-origin: 0 0;
+      transition: 0.6s;
+    }
+
+    .menu-toggle input:checked~span:nth-child(2) {
+      transform: rotate(45deg) translate(-2px, -1px);
+      background-color: white;
+    }
+
+    .menu-toggle span:last-child {
+      transform-origin: 0 100%;
+      transition: 1s;
+    }
+
+    .menu-toggle input:checked~span:last-child {
+      transform: rotate(-45deg) translate(-1.8px, 0);
+      background-color: white;
+    }
+
+    .menu-toggle span:nth-child(3) {
+      transition: 0.6s;
+    }
+
+    .menu-toggle input:checked~span:nth-child(3) {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    /* Last Humberger Menu */
+    /* Last Navbar */
+
+    /* First Container 2 */
+    .container2 {
+      width: 100%;
+      height: 100vh;
+      background-image: linear-gradient(0deg,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.7)),
+        url("../static/asset/back.jpg");
+      filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.04));
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      object-fit: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0px 0px 100px 0px;
+    }
+
+    .box-container2 {
+      width: 800px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box-container2 h1 {
+      color: white;
+      font-size: 52px;
+      font-weight: 800;
+    }
+
+    .box-container2>p {
+      color: white;
+      text-align: center;
+      font-size: 15px;
+      margin-top: 24px;
+    }
+
+    .box-container2 h1 span {
+      color: #d19c4c;
+    }
+
+    .bubble-effect {
+      position: relative;
+      top: 10%;
+      left: 33%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: end;
+      gap: 15px;
+      transform: translateY(50px);
+      opacity: 0;
+      transition: all 0.7s ease;
+    }
+
+    .bubble-effect-tampil {
+      position: relative;
+      transform: translateY(0px);
+      opacity: 1;
+    }
+
+    .bubble1 {
+      width: 255px;
+      background-color: white;
+      border-radius: 50px 0 50px 50px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+    }
+
+    .bubble1 p {
+      font-size: 12px;
+      font-weight: bold;
+      color: black;
+      text-align: start;
+    }
+
+    .bubble2 {
+      width: 190px;
+      background-color: #d19c4c;
+      border-radius: 50px 0 50px 50px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+    }
+
+    .bubble2 p {
+      font-size: 12px;
+      font-weight: bold;
+      color: white;
+      text-align: start;
+    }
+
+    /* Last Container 2 */
+
+    /* First Container 3 */
+    .container3 {
+      width: 100vw;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .banner {
+      width: 1000px;
+      background: #d19c4c;
+      height: 300px;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-start;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .banner img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* Last Container 3 */
+
+    /* First Container 4 */
+    .container4 {
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 130px;
+    }
+
+    .garis1 {
+      content: "";
+      background-color: black;
+      width: 320px;
+      height: 2px;
+      border-radius: 50px;
+    }
+
+    .container4 h1 {
+      font-size: 40px;
+      font-weight: 600;
+      color: #c46200;
+    }
+
+    .garis2 {
+      content: "";
+      background-color: black;
+      width: 320px;
+      height: 2px;
+      border-radius: 50px;
+    }
+
+    /* Last Container 4 */
+
+    /* First Container 5*/
+    .container5 {
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 100px;
+      margin-top: 70px;
+    }
+
+    .card {
+      background-color: white;
+      width: 281px;
+      height: 430px;
+      filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.04));
+      border-radius: 30px;
+      border: none;
+    }
+
+    .head-card img {
+      position: absolute;
+      width: 221.7px;
+      height: 170.83px;
+      left: calc(50% - 221.7px / 2 + 0.35px);
+      top: 24px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .body-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px;
+      gap: 25px;
+      position: absolute;
+      width: 241px;
+      left: calc(50% - 241px / 2);
+      top: 224px;
+    }
+
+    .body-card h2 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 28px;
+    }
+
+    .body-card p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      text-align: justify;
+      letter-spacing: 0.05px;
+    }
+
+    /* Last Container 5 */
+
+    /* First Container 6 */
+    .container6 {
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin-top: 250px;
+    }
+
+    .body-container6 {
+      position: relative;
+      width: 597px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .isi-body-container6 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .isi-body-container6 h2 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+    }
+
+    .isi-body-container6 p {
+      text-align: justify;
+    }
+
+    /* First Fungsi Carousel */
+    ul,
+    ol {
+      list-style-type: none;
+    }
+
+    /* end css reset */
+
+    .container {
+      position: relative;
+      overflow: hidden;
+      background: none;
+      width: 620px;
+      height: 700px;
+      filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.04));
+    }
+
+    ul.slide li img {
+      height: auto;
+      max-width: 100%;
+      width: 620px;
+      height: 700px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-left: 0px;
+    }
+
+
+    ul.slide {
+      position: absolute;
+      display: block;
+      width: 300%;
+      left: 0;
+    }
+
+    /* Yang membuatnya jadi slider */
+    ul.slide li {
+      display: inline-block;
+      float: left;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-transition: -webkit-transform 2000ms;
+      -moz-transition: -moz-transform 2000ms;
+      transition: -webkit-transform 2000ms, transform 2000ms;
+    }
+
+    ul.slide li.slide-1 {
+      left: 0%;
+    }
+
+    ul.slide li.slide-2 {
+      left: 100%;
+    }
+
+    #nav-1:checked~ul.slide li {
+      -webkit-transform: translateX(0%);
+      -moz-transform: translateX(0%);
+      transform: translateX(0%);
+    }
+
+    #nav-2:checked~ul.slide li {
+      -webkit-transform: translateX(-100%);
+      -moz-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+
+    /* End, yang membuatnya jadi slider */
+
+
+    /* Navigator */
+
+    .radio-nav {
+      /* menghilangkan radio button */
+      display: none;
+    }
+
+    /* styling untuk tombol next dan previous slide */
+    .nav-arrow {
+      position: absolute;
+      top: 48%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-next {
+      right: 10px;
+    }
+
+    .nav-prev {
+      left: 10px;
+    }
+
+    .nav-arrow label {
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      padding: 15px 18px;
+      cursor: pointer;
+      z-index: 1;
+      opacity: 0;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .container:hover .nav-arrow label {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    /* end styling untuk tombol next dan previous slide */
+    /*Setiap slide mempunya tombol prev dan next-nya masing-masing. Nah, tampilkan tombol yang tepat dengan kode dibawah ini*/
+    #nav-1:checked~.nav-prev label.nav-3,
+    #nav-1:checked~.nav-next label.nav-2,
+    #nav-2:checked~.nav-prev label.nav-1,
+    #nav-2:checked~.nav-next label.nav-3,
+    #nav-3:checked~.nav-prev label.nav-2,
+    #nav-3:checked~.nav-next label.nav-1 {
+      z-index: 2;
+      opacity: 1;
+    }
+
+    /* end */
+
+    /* Navigator */
+    /* Last Fungsi Carousel */
+    /* Last Container 6 */
+
+    /* First Container 7 */
+    .container7 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 250px;
+      position: relative;
+      width: 100vw;
+      top: 200px;
+    }
+
+    .img-container7 img {
+      width: 384px;
+      height: 384px;
+    }
+
+    .rating {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 42px;
+    }
+
+    .rating h2 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 43px;
+    }
+
+    .star-rating {
+      display: flex;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 10px;
+      filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.04));
+    }
+
+    .star-rating img {
+      width: 60px;
+      height: 60px;
+    }
+
+    /* Last Container 7 */
+
+    /* First Container 8 */
+    .container8 {
+      width: 100vw;
+      margin-bottom: 200px;
+      margin-top: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .container8 h2 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      color: #c46200;
+    }
+
+    .daily-update {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 74px;
+    }
+
+    .head-daily-card img {
+      width: 344px;
+      height: 344px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    /* Last Container 8 */
+
+    /* First Footer */
+    footer {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .isi-footer1 {
+      width: 100%;
+      height: 395px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 500px;
+      background-color: black;
+    }
+
+    .img-footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .img-footer>img {
+      width: 180px;
+    }
+
+    .icon-sosmed {
+      width: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .text-footer {
+      width: 454.28px;
+      gap: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+    }
+
+    .head-text-footer h6 {
+      line-height: 30px;
+      font-size: 24px;
+      color: white;
+    }
+
+    .head-text-footer h6 span {
+      color: #ec9e06;
+    }
+
+    .body-text-footer p {
+      font-size: 15px;
+      color: white;
+    }
+
+    .isi-footer2 {
+      width: 100%;
+      height: 30px;
+      background-color: #1d1d1b;
+      display: flex;
+      justify-content: center;
+      color: white;
+    }
+
+    /* Last Footer */
+
+    /* First Media Screen layar Sangat Besar */
+    @media (max-width: 1920px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      /* First Navigasi Bar */
+      nav ul {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        width: 38%;
+      }
+
+      /* Last Navigasi Bar */
+
+      /* First Container 2 */
+      .box-container2 {
+        width: 1000px;
+        height: 500px;
+      }
+
+      .box-container2 h1 {
+        font-size: 58px;
+      }
+
+      .box-container2>p {
+        font-size: 17px;
+        margin-top: 30px;
+      }
+
+      .bubble-effect {
+        top: 15%;
+        left: 32.5%;
+        gap: 15px;
+      }
+
+      .bubble1 {
+        width: 300px;
+        padding-top: 30px;
+      }
+
+      .bubble1 p {
+        font-size: 14px;
+      }
+
+      .bubble2 {
+        width: 230px;
+        padding-top: 30px;
+      }
+
+      .bubble2 p {
+        font-size: 14px;
+      }
+
+      /* Last Container 2 */
+
+      /* First Container 3 */
+      .container3 {
+        height: 600px;
+      }
+
+      .banner {
+        width: 75%;
+        height: 60%;
+        object-fit: cover;
+      }
+
+      /* Last Container 3 */
+
+      /* First Container 4 */
+      .container4 {
+        padding: 0 220px;
+      }
+
+      .container4 h1 {
+        font-size: 45px;
+      }
+
+      .garis1 {
+        width: 450px;
+      }
+
+      .garis2 {
+        width: 450px;
+      }
+
+      /* Last Container 4 */
+
+      /* First Container 5 */
+      .container5 {
+        margin-top: 120px;
+        gap: 150px;
+      }
+
+      .card {
+        width: 340px;
+        height: 480px;
+      }
+
+      .head-card img {
+        position: absolute;
+        width: 240px;
+        height: 190px;
+        left: calc(47.8% - 221.7px / 2 + 0.35px);
+        top: 40px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      .body-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 25px;
+        position: absolute;
+        width: 241px;
+        left: calc(50% - 241px / 2);
+        top: 260px;
+      }
+
+      .body-card h2 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+      }
+
+      .body-card p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        text-align: justify;
+        letter-spacing: 0.05px;
+      }
+
+      /* Last Container 5 */
+
+      /* First Container 6 */
+      .container6 {
+        gap: 90px;
+      }
+
+      .container6 img {
+        width: 640px;
+        height: 700px;
+        object-fit: cover;
+      }
+
+      .body-container6 {
+        width: 740px;
+        gap: 30px;
+      }
+
+      .isi-body-container6 {
+        gap: 35px;
+      }
+
+      .isi-body-container6 h2 {
+        font-size: 42px;
+      }
+
+      .isi-body-container6 p {
+        font-size: 18px;
+      }
+
+      /* Last Container 6 */
+
+      /* First Container 7 */
+      .container7 {
+        gap: 450px;
+      }
+
+      .img-container7 img {
+        width: 450px;
+        height: 450px;
+      }
+
+      .rating {
+        gap: 100px;
+      }
+
+      .rating h2 {
+        font-size: 45px;
+      }
+
+      /* Last Container 7 */
+
+      /* First Container 8 */
+      .container8 {
+        margin-bottom: 180px;
+        margin-top: 420px;
+        gap: 100px;
+      }
+
+      .container8 h2 {
+        font-size: 42px;
+      }
+
+      .daily-update {
+        gap: 130px;
+      }
+
+      .head-daily-card img {
+        width: 400px;
+        height: 400px;
+
+      }
+
+      /* Last Container 8 */
+
+      /* First Footer */
+      .isi-footer1 {
+        gap: 650px;
+        height: 480px;
+      }
+
+      .img-footer>img {
+        width: 200px;
+      }
+
+      .text-footer {
+        width: 460px;
+        gap: 40px;
+      }
+
+      .head-text-footer h6 {
+        font-size: 32px;
+        line-height: 40px;
+      }
+
+      .body-text-footer p {
+        font-size: 18px;
+        color: white;
+      }
+
+      .isi-footer2 {
+        padding-top: 12px;
+        height: 40px;
+      }
+
+      .isi-footer2 p {
+        font-size: 18px;
+      }
+
+      /* Last Footer */
+
+    }
+
+    /* Last Media Screen layar Sangat Besar */
+
+    /* First Media Screen Layar Besar */
+    @media (max-width: 1366px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      /* First Container 2 */
+      .box-container2 {
+        width: 800px;
+        height: 400px;
+      }
+
+      .box-container2 h1 {
+        font-size: 52px;
+      }
+
+      .box-container2>p {
+        font-size: 15px;
+        margin-top: 24px;
+      }
+
+      .bubble-effect {
+        top: 10%;
+        left: 33%;
+        gap: 15px;
+      }
+
+      .bubble1 {
+        width: 255px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+      }
+
+      .bubble1 p {
+        font-size: 12px;
+      }
+
+      .bubble2 {
+        width: 190px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+      }
+
+      .bubble2 p {
+        font-size: 12px;
+      }
+
+      /* Last Container 2 */
+
+      /* First Container 3 */
+      .banner {
+        width: 75%;
+        height: 48%;
+      }
+
+      /* Last Container 3 */
+
+      /* First Container 4 */
+      .container4 {
+        padding: 0 120px;
+      }
+
+      .garis1 {
+        width: 290px;
+      }
+
+      .container4 h1 {
+        font-size: 40px;
+      }
+
+      .garis2 {
+        width: 290px;
+      }
+
+      /* Last Container 4 */
+
+      /* First Container 5 */
+      .container5 {
+        width: 100vw;
+        gap: 100px;
+        margin-top: 70px;
+      }
+
+      .card {
+        width: 281px;
+        height: 430px;
+      }
+
+      .head-card img {
+        width: 221.7px;
+        height: 170.83px;
+        left: calc(50% - 221.7px / 2 + 0.35px);
+        top: 24px;
+      }
+
+      .body-card {
+        gap: 25px;
+        width: 241px;
+        left: calc(50% - 241px / 2);
+        top: 224px;
+      }
+
+      .body-card h2 {
+        font-size: 28px;
+      }
+
+      .body-card p {
+        font-size: 15px;
+      }
+
+      /* Last Container 5 */
+
+      /* First Container 6 */
+      .container6 {
+        gap: 35px;
+        margin-top: 150px;
+      }
+
+      .container6 img {
+        width: 480px;
+        height: 580px;
+        object-fit: cover;
+      }
+
+      .body-container6 {
+        width: 520px;
+        gap: 30px;
+      }
+
+      .isi-body-container6 {
+        gap: 12px;
+      }
+
+      .isi-body-container6 h2 {
+        font-size: 32px;
+      }
+
+      .isi-body-container6 p {
+        font-size: 15px
+      }
+
+      /* Last Container  6 */
+
+      /* First Container 7 */
+      .container7 {
+        gap: 300px;
+      }
+
+      .img-container7 img {
+        width: 300px;
+        height: 300px;
+      }
+
+      .rating h2 {
+        font-size: 32px;
+      }
+
+      .star-rating img {
+        width: 50px;
+        height: 50px;
+      }
+
+      /* Last Container 7 */
+
+      /* First Container 8 */
+      .container8 {
+        margin-bottom: 180px;
+        margin-top: 400px;
+        gap: 60px;
+      }
+
+      .container8 h2 {
+        font-size: 32px;
+      }
+
+      .daily-update {
+        gap: 60px;
+      }
+
+      .head-daily-card img {
+        width: 310px;
+        height: 310px;
+      }
+
+      /* Last Container 8 */
+
+      /* First Footer */
+      .isi-footer1 {
+        height: 395px;
+        gap: 400px;
+      }
+
+      .img-footer>img {
+        width: 140px;
+      }
+
+      .head-text-footer h6 {
+        font-size: 24px;
+      }
+
+      .body-text-footer p {
+        font-size: 15px;
+        color: white;
+      }
+
+      .isi-footer2 {
+        height: 40px;
+      }
+
+      .isi-footer2 p {
+        font-size: 16px;
+      }
+
+      /* Last Footer */
+
+    }
+
+    /* Last Media Screen layar Besar */
+
+    /* First Media Screen Layar Normal */
+    @media (max-width: 1024px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      /* First  Navigasi Bar */
+      nav {
+        gap: 5em;
+      }
+
+      nav ul {
+        width: 48%;
+      }
+
+      nav ul li a {
+        font-size: 17px;
+      }
+
+      /* Last Navigasi Bar */
+
+      /* First Container 2 */
+      .box-container2 {
+        width: 800px;
+        height: 320px;
+        margin-top: 30px;
+      }
+
+      .box-container2 h1 {
+        font-size: 42px;
+      }
+
+      .box-container2>p {
+        font-size: 13px;
+        margin-top: 26px;
+      }
+
+      .bubble-effect {
+        top: 15%;
+        left: 32%;
+      }
+
+      /* Last Container 2 */
+
+      /* First Container 3 */
+      .banner {
+        width: 75%;
+        height: 48%;
+      }
+
+      /* Last Container 3 */
+
+      /* First Container 4 */
+      .container4 {
+        padding: 0 110px;
+      }
+
+      .garis1 {
+        width: 220px;
+      }
+
+      .container4 h1 {
+        font-size: 32px;
+      }
+
+      .garis2 {
+        width: 220px;
+      }
+
+      /* Last Container 4 */
+
+      /* First Container 5 */
+      .container5 {
+        gap: 45px;
+      }
+
+      .card {
+        width: 240px;
+        height: 390px;
+      }
+
+      .head-card img {
+        width: 200px;
+        height: 160px;
+        left: calc(54% - 221.7px / 2 + 0.35px);
+        top: 24px;
+        object-fit: cover;
+      }
+
+      .body-card {
+        width: 200px;
+        left: calc(58.5% - 241px / 2);
+        top: 215px;
+      }
+
+      .body-card h2 {
+        font-size: 23px;
+      }
+
+      .body-card p {
+        font-size: 12px;
+      }
+
+      /* Last Container 5 */
+
+      /* First Container 6 */
+      .container6 {
+        margin-top: 180px;
+      }
+
+      .container6 img {
+        width: 400px;
+        height: 480px;
+        object-fit: cover;
+      }
+
+      .body-container6 {
+        width: 390px;
+      }
+
+      .isi-body-container6 h2 {
+        font-size: 28px;
+      }
+
+      .isi-body-container6 p {
+        font-size: 12px;
+      }
+
+      /* Last Container  6 */
+
+      /* First Container 7 */
+      .container7 {
+        gap: 180px;
+        top: 140px;
+      }
+
+      .img-container7 img {
+        width: 280px;
+        height: 280px;
+      }
+
+      .rating {
+        gap: 42px;
+      }
+
+      .rating h2 {
+        font-size: 32px;
+      }
+
+      .star-rating img {
+        width: 45px;
+        height: 45px;
+      }
+
+      /* Last Container 7 */
+
+      /* First Container 8 */
+      .container8 {
+        margin-bottom: 170px;
+        margin-top: 340px;
+      }
+
+      .container8 h2 {
+        font-size: 30px;
+      }
+
+      .daily-update {
+        gap: 32px;
+      }
+
+      .head-daily-card img {
+        width: 260px;
+        height: 260px;
+        object-fit: cover;
+      }
+
+      /* Last Container 8 */
+
+      /* First Footer */
+      .isi-footer1 {
+        gap: 320px;
+      }
+
+      .img-footer>img {
+        width: 120px;
+      }
+
+      .text-footer {
+        width: 390px;
+      }
+
+
+      .head-text-footer h6 {
+        font-size: 22px;
+      }
+
+      .body-text-footer p {
+        font-size: 13px;
+      }
+
+      .isi-footer2 {
+        height: 32px;
+      }
+
+      .isi-footer2 p {
+        font-size: 13px;
+      }
+
+      /* Last Footer */
+
+    }
+
+    /* Last Media Screen Layar Normal */
+
+    /* First Media Screen Tablet*/
+    @media (max-width: 991px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      /* First Navbar */
+      nav {
+        gap: 6em;
+      }
+
+      nav ul {
+        width: 52%;
+      }
+
+      /* Last Navbar */
+
+      /* First Container 2 */
+      .container2 {
+        height: 100vh;
+      }
+
+      .box-container2 h1 {
+        font-size: 42px;
+      }
+
+      .box-container2>p {
+        font-size: 12px;
+        width: 670px;
+      }
+
+      .bubble-effect {
+        left: 27%;
+      }
+
+      .bubble1 {
+        width: 235px;
+      }
+
+      .bubble1 p {
+        font-size: 10px;
+      }
+
+      .bubble2 {
+        width: 166px;
+      }
+
+      .bubble2 p {
+        font-size: 10px;
+      }
+
+      /* Last Container 2 */
+
+      /* First Container 3 */
+      .banner {
+        width: 72%;
+        height: 42%;
+      }
+
+      /* Last Container 3 */
+
+      /* First Container 4 */
+      .container4 {
+        padding: 0 68px;
+      }
+
+      .garis1 {
+        width: 180px;
+      }
+
+      .container4 h1 {
+        font-size: 30px;
+      }
+
+      .garis2 {
+        width: 180px;
+      }
+
+      /* Last Container 4 */
+
+      /* First Container 5 */
+      .container5 {
+        gap: 40px;
+      }
+
+      .card {
+        width: 220px;
+        height: 360px;
+      }
+
+      .head-card img {
+        width: 170px;
+        height: 130px;
+        left: calc(61% - 221.7px / 2 + 0.35px);
+        top: 35px;
+        object-fit: cover;
+      }
+
+      .body-card {
+        width: 190px;
+        left: calc(62% - 241px / 2);
+        top: 195px;
+      }
+
+      .body-card h2 {
+        font-size: 22px;
+      }
+
+      .body-card p {
+        font-size: 12px;
+      }
+
+      /* Last Container 5 */
+
+      /* First Container 6 */
+      .container6 {
+        flex-direction: column;
+        gap: 80px;
+        margin-top: 140px;
+      }
+
+      .container6 img {
+        width: 480px;
+        height: 420px;
+        object-fit: cover;
+      }
+
+      .body-container6 {
+        width: 700px;
+      }
+
+      .isi-body-container6 h2 {
+        font-size: 28px;
+      }
+
+      .isi-body-container6 p {
+        font-size: 14px;
+      }
+
+      /* Last Container 6 */
+
+      /* First Container 7 */
+      .container7 {
+        gap: 140px;
+      }
+
+      .img-container7 img {
+        width: 260px;
+        height: 260px;
+      }
+
+      .rating h2 {
+        font-size: 30px;
+      }
+
+      .star-rating {
+        gap: 10px;
+      }
+
+      .star-rating img {
+        width: 40px;
+        height: 40px;
+      }
+
+      /* Last Container 7 */
+
+      /* First Container 8 */
+      .container8 {
+        margin-bottom: 150px;
+      }
+
+      .container8 h2 {
+        font-size: 30px;
+      }
+
+      .daily-update {
+        gap: 35px;
+      }
+
+      .head-daily-card img {
+        width: 215px;
+        height: 215px;
+      }
+
+      /* Last Container 8 */
+
+      /* First Footer */
+      .isi-footer1 {
+        gap: 225px;
+      }
+
+      .img-footer>img {
+        width: 140px;
+      }
+
+      .text-footer {
+        width: 320px;
+      }
+
+      .head-text-footer h6 {
+        font-size: 20px;
+      }
+
+      .body-text-footer p {
+        font-size: 12px;
+      }
+
+      .isi-footer2 p {
+        font-size: 12px;
+      }
+
+      /* Last Footer */
+    }
+
+    /* last Media Screen Tablet */
+
+    /* First Media Screen Hp Besar(Tablet Mini) */
+    @media (max-width: 768px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      /* First Navbar */
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        flex-direction: column;
+        background-color: darkgoldenrod;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 10%;
+        transform: translateX(100%);
+        transition: all 1s;
+      }
+
+      nav ul li {
+        padding-left: 50px;
+        transform: translate(0, 30px);
+      }
+
+      .sticky-header .menu-toggle span {
+        background-color: black;
+      }
+
+      .slide {
+        transform: translateX(0);
+      }
+
+      /* Last Navbar */
+
+      /* First Container 2 */
+      .box-container2 h1 {
+        font-size: 40px;
+      }
+
+      .box-container2>p {
+        font-size: 12px;
+        width: 630px;
+      }
+
+      .bubble-effect {
+        left: 23.5%;
+      }
+
+      /* Last Container 2 */
+
+      /* First Container 4 */
+      .container4 {
+        padding: 0 80px;
+      }
+
+      .garis1 {
+        width: 165px;
+      }
+
+      .container4 h1 {
+        font-size: 27px;
+      }
+
+      .garis2 {
+        width: 165px;
+      }
+
+      /* Last Container 4 */
+
+      /* First Container 5 */
+      .container5 {
+        gap: 32px;
+      }
+
+      .body-card h2 {
+        font-size: 20px;
+      }
+
+      /* Last Container 5 */
+
+      /* First Container 6 */
+      .body-container6 {
+        width: 650px;
+      }
+
+      /* Last Container 6 */
+
+      /* First Container 7 */
+      .container7 {
+        gap: 120px;
+      }
+
+      .img-container7 img {
+        width: 240px;
+        height: 240px;
+      }
+
+      .star-rating img {
+        width: 35px;
+        height: 35px;
+      }
+
+      /* Last Container 7 */
+
+      /* First Container 8 */
+      .container8 h2 {
+        font-size: 28px;
+      }
+
+      .daily-update {
+        gap: 28px;
+      }
+
+      /* Last Container 8 */
+
+      /* First Footer */
+      .isi-footer1 {
+        gap: 200px;
+      }
+
+      .img-footer>img {
+        width: 120px;
+      }
+
+      .head-text-footer h6 {
+        font-size: 18px;
+      }
+
+      .body-text-footer p {
+        font-size: 10px;
+      }
+
+      .isi-footer2 p {
+        font-size: 10px;
+      }
+
+      /* Last Footer */
+    }
+
+    /* Last Media Screen Hp Besar (Tablet Mini)*/
+
+    /* First Media Screen Hp Normal */
+    @media (max-width: 575px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      /* First Navbar */
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        flex-direction: column;
+        background-color: darkgoldenrod;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 10%;
+        transition: all 1s;
+      }
+
+
+      .nav-logo a img {
+        width: 58px;
+        height: 58px;
+      }
+
+      nav ul li {
+        padding-left: 50px;
+        transform: translate(0, 30px);
+      }
+
+      .sticky-header .menu-toggle span {
+        background-color: black;
+      }
+
+      .slide {
+        right: 300px;
+        overflow: hidden;
+      }
+
+      /* Last Navbar */
+
+      /* First Container 2 */
+      .container2 {
+        border-radius: 0px 0px 40px 0px;
+        padding-top: 30px;
+      }
+
+      .box-container2 h1 {
+        font-size: 29px;
+        width: 300px;
+        text-align: center;
+      }
+
+      .box-container2>p {
+        font-size: 11px;
+        width: 310px;
+      }
+
+      .bubble-effect {
+        left: 15%;
+      }
+
+      .bubble1 {
+        width: 170px;
+        padding-top: 12px;
+        padding-left: 20px;
+      }
+
+      .bubble1 p {
+        font-size: 10px;
+      }
+
+      .bubble2 {
+        width: 130px;
+        padding-top: 12px;
+        padding-left: 16px;
+      }
+
+      .bubble2 p {
+        font-size: 10px;
+      }
+
+      /* Last Container 2 */
+
+      /* First Container 3 */
+      .container3 {
+        height: 300px;
+      }
+
+      .banner {
+        width: 75%;
+        height: 38%;
+      }
+
+      /* Last Container 3 */
+
+      /* First Container 4 */
+      .container4 {
+        padding: 0 47px;
+      }
+
+      .garis1 {
+        display: none;
+      }
+
+      .container4 h1 {
+        font-size: 22px;
+      }
+
+      .garis2 {
+        width: 90px;
+      }
+
+      /* Last Container 4 */
+
+      /* First Container 5 */
+      .container5 {
+        gap: 50px;
+        margin-top: 50px;
+        flex-direction: column;
+      }
+
+      .card {
+        width: 281px;
+        height: 380px;
+      }
+
+      .head-card img {
+        width: 221.7px;
+        height: 170.83px;
+        left: calc(50% - 221.7px / 2 + 0.35px);
+        top: 24px;
+        object-fit: cover;
+      }
+
+      .body-card {
+        gap: 25px;
+        width: 241px;
+        left: calc(50% - 241px / 2);
+        top: 224px;
+      }
+
+      .body-card h2 {
+        font-size: 22px;
+      }
+
+      .body-card p {
+        font-size: 12px;
+      }
+
+      /* Last Container 5 */
+
+      /* First Container 6 */
+      .container6 {
+        gap: 40px;
+        margin-top: 120px;
+      }
+
+      .container {
+        position: relative;
+        overflow: hidden;
+        background: none;
+        width: 280px;
+        height: 400px;
+      }
+
+      ul.slide li img {
+        width: 280px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 20px;
+        margin-left: 0px;
+      }
+
+
+      ul.slide {
+        position: absolute;
+        display: block;
+        width: 300%;
+        left: 0;
+      }
+
+      .body-container6 {
+        width: 282px;
+      }
+
+      .isi-body-container6 h2 {
+        font-size: 24px;
+      }
+
+      .isi-body-container6 p {
+        font-size: 12px;
+      }
+
+      /* Last Container 6 */
+
+      /* First Container 7 */
+      .container7 {
+        gap: 90px;
+        flex-direction: column;
+        top: 100px;
+      }
+
+      .img-container7 img {
+        width: 210px;
+        height: 210px;
+      }
+
+      .rating {
+        gap: 20px;
+      }
+
+      .rating h2 {
+        font-size: 22px;
+      }
+
+      .star-rating img {
+        width: 28px;
+        height: 28px;
+      }
+
+      /* Last Container 7 */
+
+      /* First Container 8 */
+      .container8 {
+        margin-top: 250px;
+        margin-bottom: 100px;
+      }
+
+      .container8 h2 {
+        font-size: 22px;
+        width: 280px;
+        text-align: center;
+      }
+
+      .daily-update {
+        gap: 35px;
+        flex-direction: column;
+      }
+
+      .head-daily-card img {
+        width: 275px;
+        height: 275px;
+        object-fit: cover;
+      }
+
+      /* Last Container 8 */
+
+      /* First Footer */
+
+      .isi-footer1 {
+        gap: 100px;
+        flex-direction: column;
+        height: 545px;
+      }
+
+      .img-footer>img {
+        width: 140px;
+      }
+
+      .text-footer {
+        width: 280px;
+      }
+
+      .head-text-footer h6 {
+        font-size: 19px;
+      }
+
+      .body-text-footer p {
+        font-size: 11px;
+      }
+
+      .isi-footer2 p {
+        font-size: 9px;
+      }
+
+      /* Last Footer */
+    }
+
+    /* Last Media Screen Hp Normal */
+
+    /* First Media Screen Hp Kecil */
+    @media (max-width: 360px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      /* First Navbar */
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        flex-direction: column;
+        background-color: darkgoldenrod;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 10%;
+        transition: all 1s;
+      }
+
+
+      .nav-logo a img {
+        width: 50px;
+        height: 50px;
+      }
+
+      nav ul li {
+        padding-left: 50px;
+        transform: translate(0, 30px);
+      }
+
+      .sticky-header {
+        height: 70px;
+      }
+
+      .sticky-header .nav-logo a img {
+        width: 45px;
+        height: 45px;
+      }
+
+      .sticky-header .menu-toggle span {
+        background-color: black;
+      }
+
+      .slide {
+        right: 300px;
+        overflow: hidden;
+      }
+
+      /* Last Navbar */
+
+      /* First Container 2 */
+      .container2 {
+        height: 100vh;
+      }
+
+      .box-container2 {
+        margin-top: 50px;
+      }
+
+      .box-container2 h1 {
+        font-size: 22px;
+        width: 300px;
+      }
+
+      .box-container2>p {
+        font-size: 8px;
+        width: 260px;
+      }
+
+      .bubble-effect {
+        left: 24.5%;
+        top: 8%;
+      }
+
+      .bubble1 {
+        width: 100px;
+        padding-top: 12px;
+        padding-left: 10px;
+      }
+
+      .bubble1 p {
+        font-size: 7.5px;
+      }
+
+      .bubble2 {
+        width: 70px;
+        padding-top: 12px;
+        padding-left: 10px;
+      }
+
+      .bubble2 p {
+        font-size: 7.5px;
+      }
+
+      /* Last Container 2 */
+
+      /* First Container 3 */
+      .container3 {
+        height: 250px;
+      }
+
+      .banner {
+        width: 75%;
+        height: 38%;
+      }
+
+      /* Last Container 3 */
+
+      /* First Container 4 */
+      .container4 {
+        padding: 0 47px;
+      }
+
+      .container4 h1 {
+        font-size: 20px;
+      }
+
+      .garis2 {
+        width: 50px;
+      }
+
+      /* Last Container 4 */
+
+      /* First Container 5 */
+      .container5 {
+        gap: 50px;
+        margin-top: 50px;
+        flex-direction: column;
+      }
+
+      .card {
+        width: 220px;
+        height: 340px;
+      }
+
+      .head-card img {
+        width: 180px;
+        height: 140px;
+        left: calc(60% - 221.7px / 2 + 0.35px);
+        top: 24px;
+        object-fit: cover;
+      }
+
+      .body-card {
+        width: 190px;
+        left: calc(62% - 241px / 2);
+        top: 200px;
+      }
+
+      .body-card h2 {
+        font-size: 18px;
+      }
+
+      .body-card p {
+        font-size: 10px;
+      }
+
+      /* Last Container 5 */
+
+      /* First Container 6 */
+      .container6 {
+        gap: 40px;
+        margin-top: 120px;
+      }
+
+      .container6 img {
+        width: 240px;
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .body-container6 {
+        width: 240px;
+      }
+
+      .isi-body-container6 h2 {
+        font-size: 18px;
+      }
+
+      .isi-body-container6 p {
+        font-size: 10px;
+      }
+
+      /* Last Container 6 */
+
+      /* First Container 7 */
+      .container7 {
+        gap: 90px;
+        flex-direction: column;
+        top: 100px;
+      }
+
+      .img-container7 img {
+        width: 150px;
+        height: 150px;
+      }
+
+      .rating {
+        gap: 20px;
+      }
+
+      .rating h2 {
+        font-size: 18px;
+      }
+
+      .star-rating img {
+        width: 22px;
+        height: 22px;
+      }
+
+      /* Last Container 7 */
+
+      /* First Container 8 */
+      .container8 {
+        margin-top: 220px;
+        margin-bottom: 100px;
+      }
+
+      .container8 h2 {
+        font-size: 18px;
+        width: 280px;
+        text-align: center;
+      }
+
+      .daily-update {
+        gap: 35px;
+        flex-direction: column;
+      }
+
+      .head-daily-card img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      /* Last Container 8 */
+
+      /* First Footer */
+
+      .isi-footer1 {
+        gap: 50px;
+        flex-direction: column;
+        height: 400px;
+      }
+
+      .img-footer>img {
+        width: 100px;
+      }
+
+      .text-footer {
+        width: 280px;
+      }
+
+      .head-text-footer h6 {
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+      }
+
+      .body-text-footer p {
+        font-size: 8px;
+        text-align: center;
+      }
+
+      .isi-footer2 p {
+        font-size: 8px;
+      }
+
+      /* Last Footer */
+    }
+
+    /* Last Media Screen Hp Kecil */
+  </style>
+
+
+</head>
+
+<body>
+
+  <nav>
+    <!-- Div Pertama -->
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="../static/asset/Logo-FA-Primary-Color-01.png" alt="Logo WhyNotCoffee" />
+      </a>
+    </div>
+
+    <!-- Div Kedua -->
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/menu">Menu</a>
+      </li>
+      <li><a href="/about">About US</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+
+    <!-- Ini yang logo humberger -->
+    <div class="menu-toggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <div class="container2">
+    <div class="box-container2">
+      <h1>Welcome to <span>WhyNot</span>Coffee</h1>
+      <p>
+        “ ... Secangkir kopi dapat menjadi sebuah inspirasi, bahwa ia tidak
+        pernah berdusta atas nama rasa. Kopi selalu punya cerita, bahwa yang
+        hitam tidak selalu kotor, bahwa rasa pahit juga tidak selalu membawa
+        kesedihan ... ”
+      </p>
+      <div class="bubble-effect">
+        <div class="bubble1">
+          <p>We provide place, perfect, educated and affordable coffee.</p>
+        </div>
+        <div class="bubble2">
+          <p>Using quality coffee beans.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container3">
+    <div class="banner">
+      <img src="../static/asset/Back.jpg" alt="" />
+    </div>
+  </div>
+  </div>
+
+  <div class="container4">
+    <div class="garis1"></div>
+    <h1>WhyNot’s Value</h1>
+    <div class="garis2"></div>
+  </div>
+
+  <div class="container5">
+    <div class="card">
+      <div class="head-card">
+        <img src="../static/asset/1.jpg" alt="" />
+      </div>
+      <div class="body-card">
+        <h2>Perfect Coffee</h2>
+        <p>
+          We provide not only coffee drink, but try our best to give the
+          perfect coffee.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="head-card">
+        <img src="../static/asset/2.jpg" alt="" />
+      </div>
+      <div class="body-card">
+        <h2>Educated Coffee</h2>
+        <p>
+          It is reflected by recipe monitoring. We also provide educated
+          coffee for our cistomer by enhancing barista knowledge in coffee.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="head-card">
+        <img src="../static/asset/3.jpg" alt="" />
+      </div>
+      <div class="body-card">
+        <h2>Affordable Price</h2>
+        <p>
+          We believe that perfect coffee can be bought with affordable price
+          than other competitors.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container6">
+    <div class="head-container6">
+      <div class="container">
+        <input type="radio" name="slide" class="radio-nav" id="nav-1" checked />
+        <input type="radio" name="slide" class="radio-nav" id="nav-2" />
+        <input type="radio" name="slide" class="radio-nav" id="nav-3" />
+
+        <ul class="slide">
+          <li class="slide-1">
+            <img src="../static/asset/beans.jpg" />
+          </li>
+          <li class="slide-2">
+            <img src="../static/asset/beans2.jpg" />
+          </li>
+        </ul>
+
+        <div class="nav-arrow nav-next">
+          <label class="nav-1" for="nav-1">></label>
+          <label class="nav-2" for="nav-2">></label>
+          <label class="nav-3" for="nav-3">></label>
+        </div>
+        <div class="nav-arrow nav-prev">
+          <label class="nav-1" for="nav-1">
+            < </label>
+              <label class="nav-2" for="nav-2">
+                < </label>
+                  <label class="nav-3" for="nav-3">
+                    < </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="body-container6">
+      <div class="isi-body-container6">
+        <h2>Single Origin (Red)</h2>
+        <p>
+          “Single origin” means that the coffee beans were sourced from a
+          single location, usually a region or country. Nowadays, however, it
+          even goes as far as to mean that the beans were sourced from a
+          single farm, estate or co-operative, which does make a difference to
+          the end product that you drink. <br /><br />
+          Single origin is the best choice for you who want to get a character
+          of the coffee with their specialty.
+        </p>
+      </div>
+      <div class="isi-body-container6">
+        <h2>House Blend (Green)</h2>
+        <p>
+          “House Blend” means that the coffee beans were mixed by different
+          location, varieties, roaster to create the most consistency and
+          balance flavor that the coffee roaster, coffee shop and coffee shop
+          needs. <br /><br />
+          House Blend is the best choice for you who want to get a balance
+          flavor. If you want to find many flavor in one cup. House blend is
+          an answer.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container7">
+    <div class="img-container7">
+      <img src="../static/asset/seal-g2daa39bcd_1280.png" alt="" />
+    </div>
+    <div class="rating">
+      <h2>Rating</h2>
+      <div class="star-rating">
+        <img src="../static/asset/star.png" alt="" />
+        <img src="../static/asset/star.png" alt="" />
+        <img src="../static/asset/star.png" alt="" />
+        <img src="../static/asset/star.png" alt="" />
+        <img src="../static/asset/star.png" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div class="container8">
+    <h2>Daily's Update of WhyNotCoffee</h2>
+    <div class="daily-update">
+      <div class="daily-card">
+        <div class="head-daily-card">
+          <img src="../static/asset/daily-update.jfif" alt="" />
+        </div>
+      </div>
+
+      <div class="daily-card">
+        <div class="head-daily-card">
+          <img src="../static/asset/daily-update2.jpg" alt="" />
+        </div>
+      </div>
+
+      <div class="daily-card">
+        <div class="head-daily-card">
+          <img src="../static/asset/daily-update3.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="isi-footer1">
+      <div class="img-footer">
+        <img src="../static/asset/Logo-FA-Primary-Color-01.png" alt="" />
+        <div class="icon-sosmed">
+          <a href="https://www.instagram.com/whynotcoffee.id/">
+            <img src="../static/asset/instagram1.svg" alt="" height="20px" />
+          </a>
+          <a href="#">
+            <img src="../static/asset/whatsapp1.svg" alt="" height="20px" />
+          </a>
+        </div>
+      </div>
+
+      <div class="text-footer">
+        <div class="head-text-footer">
+          <h6><span>Specialty Coffee & Roastery</span></h6>
+          <h6>WhyNotCoffee – The Boxx In</h6>
+        </div>
+        <div class="body-text-footer">
+          <p>
+            Jl. Sukarjo Wiryopranoto No.2, RT.2/RW.4, Kb. Klp., Kecamatan
+            Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10120
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="isi-footer2">
+      <p>
+        Copyright &copy; 2023 Whynot Coffee & Roastery. All rights reserved
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("load", tampil);
+    function tampil() {
+      let elements = document.querySelectorAll(".bubble-effect");
+
+      for (let i = 0; i < elements.length; i++) {
+        let tinggiLayar = window.innerHeight;
+        let jarakAtasElement = elements[i].getBoundingClientRect().top;
+
+        if (jarakAtasElement < tinggiLayar) {
+          elements[i].classList.add("bubble-effect-tampil");
+        } else {
+          elements[i].classList.remove("bubble-effect-tampil");
+        }
+      }
+    }
+
+    window.addEventListener("scroll", nav);
+    function nav() {
+      var nav = document.querySelector("nav");
+      nav.classList.toggle("sticky-header", window.scrollY > 0);
+    }
+
+
+  </script>
+</body>
+
+</html>

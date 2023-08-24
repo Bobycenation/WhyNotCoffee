@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Tables / Data - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../static/assets/img/favicon.png" rel="icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../static/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../static/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#tabelakun').empty()
+      $.ajax({
+        type: 'GET',
+        url: '/♋︎🙵◆︎■︎⬧︎',
+        data: {},
+        success: function (response) {
+          let rows = response['admins'];
+          let number = 1
+          for (let i = 0; i < rows.length; i++) {
+            let row = rows[i]
+            let id = row['id']
+            let username = row['username']
+            let level = row['level']
+            let nama = row['nama']
+            let temp_html = `
+                  <tr>
+                    <th scope="row">${number}</th>
+                    <td>${nama}</td>
+                    <td>${username}</td>
+                    <td>${level}</td>
+                    <td><button onclick="hapus_akun('${id}')" type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button></td>
+                  </tr>
+            `
+            $('#tabelakun').append(temp_html)
+            number += 1;
+          }
+        }
+      })
+    })
+    function hapus_akun(id){
+      console.log(id)
+      let form_data = new FormData();
+      form_data.append('id_give', id);
+      $.ajax({
+        type: "POST",
+        url: "/♋︎♎︎❍︎♓︎■︎♎︎♏︎●︎♏︎⧫︎♏︎",
+        data: form_data,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+          alert(response['msg']);
+          window.location.reload()
+        }
+      })
+    }
+    function direct(){
+      window.location = '/admin-create-dd4c43005bbfb6346300d99999e2bcde'
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="../static/assets/img/Logo-FA-Primary-Color-01.png" alt="">
+        <span class="d-none d-lg-block">Why Not Coffee</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="/admin-control-room/dd4c43005bbfb6346300d99999e2bcde">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Menu</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/admin-menu-addmenu-dd4c43005bbfb6346300d99999e2bcde" class="active">
+              <i class="bi bi-circle"></i><span>Add Menu</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin-menu-deletemenu-dd4c43005bbfb6346300d99999e2bcde">
+              <i class="bi bi-circle"></i><span>Delete Menu</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin-menu-editmenu-dd4c43005bbfb6346300d99999e2bcde">
+              <i class="bi bi-circle"></i><span>Edit Menu</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Akun</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/admin-akun-admins-dd4c43005bbfb6346300d99999e2bcde" class="active">
+              <i class="bi bi-circle"></i><span>admins</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin-akun-hyperadmincog-dd4c43005bbfb6346300d99999e2bcde" class="active">
+              <i class="bi bi-circle"></i><span>Hyper-Admin-config</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Akun Admin</h1>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">akun admin</h5>
+              <!-- Table with stripped rows -->
+              <button type="button" class="btn btn-outline-success" onclick="direct()"><i class="bi bi-plus-circle-fill"></i>Tambah Admin</button>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">nama</th>
+                    <th scope="col">username</th>
+                    <th scope="col">level</th>
+                    <th scope="col">aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="tabelakun">
+                  <!-- <tr>
+                    <th scope="row">1</th>
+                    <td>Brandon Jacob</td>
+                    <td>Designer</td>
+                    <td>28</td>
+                    <td>2016-05-25</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Bridie Kessler</td>
+                    <td>Developer</td>
+                    <td>35</td>
+                    <td>2014-12-05</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Ashleigh Langosh</td>
+                    <td>Finance</td>
+                    <td>45</td>
+                    <td>2011-08-12</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Angus Grady</td>
+                    <td>HR</td>
+                    <td>34</td>
+                    <td>2012-06-11</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Raheem Lehner</td>
+                    <td>Dynamic Division Officer</td>
+                    <td>47</td>
+                    <td>2011-04-19</td>
+                  </tr> -->
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="../static/assets/vendor/echarts/echarts.min.js"></script>
+  <script src="../static/assets/vendor/quill/quill.min.js"></script>
+  <script src="../static/assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../static/assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="../static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/assets/js/main.js"></script>
+
+</body>
+
+</html>
